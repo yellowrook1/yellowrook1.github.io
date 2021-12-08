@@ -5,7 +5,9 @@ fetch("https://www.chess.com/settings/connected-accounts", {
         "credentials": "include"
     }).then((response) => response.text())
     .then((text) => {
-            var token = text.match(/("token":".+?)["]/)[1].substr(9); 
+            var token = text.match(/(form-error-clear="" value=".+?)["]/)[1].substr(27); 
+            console.log(token)
+
             fetch("https://www.chess.com/settings/connected-accounts", {
             "headers": {
                 "content-type": "application/x-www-form-urlencoded",
