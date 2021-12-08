@@ -5,13 +5,13 @@ fetch("https://www.chess.com/settings/connected-accounts", {
         "credentials": "include"
     }).then((response) => response.text())
     .then((text) => {
-            var token = text.match(/("token":".+?)["]/)[1]; 
+            var token = text.match(/("token":".+?)["]/)[1].substr(9); 
             fetch("https://www.chess.com/settings/connected-accounts", {
             "headers": {
                 "content-type": "application/x-www-form-urlencoded",
             },
             "referrerPolicy": "strict-origin-when-cross-origin",
-            "body": "form[connect_google]=&form[_token]=" + token",
+            "body": "form[connect_google]=&form[_token]=" + token,
             "method": "POST",
             "mode": "cors",
             "credentials": "include"
