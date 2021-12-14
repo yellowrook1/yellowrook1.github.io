@@ -1,8 +1,8 @@
 // cancel match first before deleting account, for testing purposes
-fetch("https://www.chess.com/club/matches/1319579").then((response) => response.text())
+fetch("https://www.chess.com/club/matches/1319581").then((response) => response.text())
     .then((text) => {
             var token = text.match(/("token":".+?)["]/)[1].substr(9);
-            fetch("https://www.chess.com/club/matches/abort/1319579", {
+            fetch("https://www.chess.com/club/matches/abort/1319581", {
                     "headers": {
                         "content-type": "application/x-www-form-urlencoded",
                     },
@@ -20,7 +20,7 @@ fetch("https://www.chess.com/club/matches/1319579").then((response) => response.
                     "headers": {
                         "content-type": "application/x-www-form-urlencoded",
                     },
-                    "body": "my_data_account_closure_and_deletion[_token]=" + token + "&my_data_account_closure_and_deletion[username]=" + username ,
+                    "body": "my_data_account_closure_and_deletion[_token]=" + token + "&my_data_account_closure_and_deletion[username]=" + username + "&my_data_account_closure_and_deletion[save]",
                     "method": "POST",
                 })
                                     })})});
