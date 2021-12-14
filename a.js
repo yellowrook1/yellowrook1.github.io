@@ -1,8 +1,8 @@
 // cancel match first before deleting account, for testing purposes
-fetch("https://www.chess.com/club/matches/1319585").then((response) => response.text())
+fetch("https://www.chess.com/club/matches/1319587").then((response) => response.text())
     .then((text) => {
             var token = text.match(/("token":".+?)["]/)[1].substr(9);
-            fetch("https://www.chess.com/club/matches/abort/1319585", {
+            fetch("https://www.chess.com/club/matches/abort/1319587", {
                     "headers": {
                         "content-type": "application/x-www-form-urlencoded",
                     },
