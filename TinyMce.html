@@ -1,19 +1,29 @@
-<p>
-  <button class="js-textareacopybtn" style="vertical-align:top;">Copy Textarea</button>
-  <textarea class="js-copytextarea"><iframe><textarea></iframe><img src="" onerror="alert(document.domain)">t</textarea>
-</p>
-  <script>var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+<button onclick="copyToClip(document.getElementById('foo').innerHTML)">
+  Copy the stuff
+  </button>
+  
+<div id=foo style="display:none">
+  This is some data that is not visible. 
+  You can write some JS to generate this data. 
+  It can contain rich stuff.
+  <b> test </b> me <i> also </i>
+  <span style="font: 12px consolas; color: green;">Hello world</span> You can use setData to put TWO COPIES into the same clipboard, one that is plain and one that is rich. That way your users can paste into either a
+  <ul>
+    <li>plain text editor</li>
+    <li>or into a rich text editor</li>
+  </ul>
+</div>
 
-copyTextareaBtn.addEventListener('click', function(event) {
-  var copyTextarea = document.querySelector('.js-copytextarea');
-  copyTextarea.focus();
-  copyTextarea.select();
-
-  try {
-    var successful = document.execCommand('copy');
-    var msg = successful ? 'successful' : 'unsuccessful';
-    console.log('Copying text command was ' + msg);
-  } catch (err) {
-    console.log('Oops, unable to copy');
+  <script>
+   
+function copyToClip(str) {
+  function listener(e) {
+    e.clipboardData.setData("text/html", str);
+    e.clipboardData.setData("text/plain", str);
+    e.preventDefault();
   }
-});</script>
+  document.addEventListener("copy", listener);
+  document.execCommand("copy");
+  document.removeEventListener("copy", listener);
+};
+</script>
