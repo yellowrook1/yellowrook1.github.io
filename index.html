@@ -1,7 +1,11 @@
-<b id="idtest">test</b>
+<b id="idtest">Iframe test</b>
 
 <script>
   var textid = document.getElementById('idtest')
-  textid.innerHTML = "idtesting test"
+if ( window.location !== window.parent.location ) {
+  textid.innerHTML = "Is in Iframe"
+} else {
+  textid.innerHTML = "Not in Iframe"
+}
 
 </script>
