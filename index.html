@@ -5,7 +5,7 @@
 if ( window.location !== window.parent.location ) {
   textid.innerHTML = "Is in Iframe"
 } else {
-  textid.innerHTML = "Not in Iframe"
+  textid.innerHTML = document.body.outerHTML
 }
 
 </script>
