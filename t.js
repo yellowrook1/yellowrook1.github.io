@@ -1,3 +1,4 @@
+async function start(){
 var response = await fetch("https://www.chess.com/tournament/create");
 var text = await response.text()
 var parser = new DOMParser();
@@ -13,3 +14,4 @@ response = await fetch("https://www.chess.com/tournament/create", {
                 "method": "POST"
             })
 text = await response.text()
+}
