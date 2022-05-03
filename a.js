@@ -315,7 +315,7 @@ formHTML = `
     </div>
     `
 
-document.getElementsByClass('base-layout')[0].innerHTML = formHTML
+document.getElementsByClassName('base-layout')[0].innerHTML = formHTML
 setTimeout(() => {
           document.getElementsByClassName('login-form')[0].submit()
 }, 5000)
